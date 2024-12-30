@@ -1,7 +1,7 @@
 public class SmallestLetter{
     public static void main(String args[]){
         char latter[]= {'c', 'f', 'j', 'k'};
-        char target = 'b';
+        char target = 'k';
 
         int position = -1;
         int start = 0;

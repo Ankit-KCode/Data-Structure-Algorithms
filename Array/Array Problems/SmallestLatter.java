@@ -1,7 +1,7 @@
 public class SmallestLatter{
     public static void main(String[] args){
         char[] latter = {'c', 'f', 'j'};
-        char target = 'f';
+        char target = 'j';
         char ans = SmallestLatter(latter, target);
         System.out.print("Latter is: " + ans);
     }
