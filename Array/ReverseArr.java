@@ -16,7 +16,6 @@ public class ReverseArr{
         System.out.print(Arrays.toString(arr));
 
         //Reversing Array
-
         int i=0; 
         int j= n-1;
         
@@ -31,6 +30,5 @@ public class ReverseArr{
 
         System.out.println("\nYour Reversed Array Is: ");
         System.out.println(Arrays.toString(arr));
-
     }
 }
