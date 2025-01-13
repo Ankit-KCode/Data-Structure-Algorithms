@@ -22,6 +22,13 @@ public class Bits_Basics{
          // 2's Complement : (flip again and Add +1)
         System.out.println("NOT a: " + notA); // -6
 
-        
+        // Left Shift <<
+        int j = 2;
+        int ls = a<<j;
+        System.out.println("Left Shift: "+ls);
+
+        // Right Shift >>
+        int rs = a>>j;
+        System.out.println("Right Shift: " + rs);
     }
 }
