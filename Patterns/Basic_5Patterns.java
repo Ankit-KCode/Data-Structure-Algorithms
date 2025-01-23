@@ -38,24 +38,20 @@ public class Basic_5Patterns{
     
 
     static void NumTrangle1(int n){
-        for(int row=0; row<n; row++){
-            int num = 1;
-            for(int col=0; col<=row; col++){
-                System.out.print(num+" ");
-                num++;
+        for(int row=1; row<=n; row++){
+            for(int col=1; col<=row; col++){
+                System.out.print(col+" ");
             }
             System.out.println();
         }
     }
 
     static void NumTriangle2(int n){
-        int num = 1;
-        for(int row=0; row<n; row++){
-            for(int col=0; col<=row; col++){
-                System.out.print(num + " ");
+        for(int row=1; row<=n; row++){
+            for(int col=1; col<=row; col++){
+                System.out.print(row + " ");
             }
             System.out.println();
-            num++;
         }
     }
 }
