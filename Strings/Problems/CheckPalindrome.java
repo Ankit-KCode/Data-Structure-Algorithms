@@ -1,6 +1,6 @@
 public class CheckPalindrome{
     public static void main(String[] args) {
-        String input = "wow";
+        String input = "wobw";
         System.out.println(CheckPalindrome(input));
     }
 
@@ -18,4 +18,11 @@ public class CheckPalindrome{
 
         return true;
     }
+
+    // static boolean CheckPalindrome(String input){
+    //     StringBuilder sb = new StringBuilder(input);
+
+    //     return input.equalsIgnoreCase(sb.reverse().toString());
+    //     // return input.equalsIgnoreCase(new StringBuilder(input).reverse().toString());  //Direct Method.
+    // }
 }
