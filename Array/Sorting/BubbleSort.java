@@ -1,8 +1,8 @@
+import java.util.*;
 public class BubbleSort{
     public static void main(String args[]){
         int arr[] = {5, 8, 2, 4, 1, 5};
         BubbleSort(arr);
-        PrintSort(arr);
     }
 
     static void BubbleSort(int arr[]){
@@ -15,11 +15,6 @@ public class BubbleSort{
                 }
             }
         }
-    }
-
-    static void PrintSort(int arr[]){
-        for(int i=0; i<arr.length; i++){
-            System.out.print(arr[i] + " ");
-        }
+        System.out.println(Arrays.toString(arr));
     }
 }
