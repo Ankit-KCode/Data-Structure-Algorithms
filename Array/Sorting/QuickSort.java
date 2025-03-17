@@ -19,7 +19,7 @@ public class QuickSort{
     // inserting pivot element at right position & returning pivot index.
     static int pivot(int arr[], int low, int high){
         int pivot = arr[low];
-        int i = low;
+        int i = low+1;
         int j = high;
 
         while(i<j){
