@@ -9,6 +9,11 @@ public class addPrintLL{
             this.data = data;
             this.next = null;
         }
+
+        Node(String data, Node next){
+            this.data = data;
+            this.next = next;
+        }
     }
     
     public static void main(String args[]){
@@ -21,10 +26,11 @@ public class addPrintLL{
         // list.printList();
 
         list.addLast("What's Up");
+        list.addMid("Buddy", 2);
         list.printList();
     }
     
-    
+
     
     
     // ------- Insert Element In the Beginning ------------
@@ -58,6 +64,24 @@ public class addPrintLL{
         }
 
         // Adding new Node Value
+        currNode.next = newNode;
+    }
+
+    // ------- Insert Element In the Middle ------------
+    public void addMid(String data, int idx){
+        if(idx == 0){
+            addFirst(data);
+            return;
+        }
+
+        // Traversing till idx-1 Index;
+        Node currNode = head;
+        for(int i=1; i<idx; i++){
+            currNode = currNode.next;
+        }
+
+        //Create new Node(Data, Idx), Assign new Node
+        Node newNode = new Node(data, currNode.next);
         currNode.next = newNode;
     }
     
