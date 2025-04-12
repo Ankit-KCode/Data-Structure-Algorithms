@@ -7,23 +7,33 @@ public class DLL{
         int data;
         Node prev;
         Node next;
-    
+        
+        // Singly Linked List
         Node(int data){
             this.data = data;
             this.prev = null;
             this.next = null;
+        }
+
+        // Doubly Linked List
+        Node(Node prev, int data, Node next){
+            this.prev = prev;
+            this.data = data;
+            this.next = next;
         }
     }
     
     public static void main(String args[]){
         DLL list = new DLL();
 
-        list.addFirst(40);
-        list.addFirst(50);
+        list.addLast(40);
+        list.addLast(50);
         list.addFirst(60);
         list.addFirst(70);
         list.addFirst(80);
         list.addFirst(90);
+        list.addMid(100, 6);
+        list.addMid(30, 0);
         list.print();
 
     }
@@ -42,6 +52,46 @@ public class DLL{
         if(head != null) head.prev = newNode; //Head may contain null value so checking null pointer;
         head = newNode;
     }
+
+    // Adding Last
+    public void addLast(int data){
+        Node newNode = new Node(data);
+
+        if(head == null){
+            newNode.prev = null;
+            head = newNode;
+            return;
+        }
+
+        Node currNode = head;
+
+        while(currNode.next != null){
+            currNode = currNode.next; 
+        }
+        currNode.next = newNode;
+        newNode.prev = currNode;
+        newNode.next = null;
+        
+    }
+
+    // Insert in Between
+    public void addMid(int data, int idx){
+        if(idx == 0){
+            addFirst(data);
+            return;
+        }
+
+        Node currNode = head;
+        for(int i=1; i<idx; i++){
+            currNode = currNode.next;
+        }
+
+        //New Node with (prev, data, next);
+        Node newNode = new Node(currNode, data, currNode.next);
+        currNode.next = newNode;
+        if(newNode.next != null) newNode.next.prev = newNode; //Null Pointer Check
+    }
+    // Now implement this using Number, not Index;
 
 
     //Print List
