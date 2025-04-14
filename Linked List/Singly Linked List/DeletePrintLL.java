@@ -16,13 +16,16 @@ class DeletePrintLL{
         list.insert("Hello!");
         list.insert("What's Up");
         list.insert("How's going");
-
-        list.deleteFirst(); // First Node Deleted
-        
         list.insert("Hello World");
+
+        // list.deleteFirst(); // First Node Deleted
+        
         // list.printLL();
 
-        list.deleteLast(); // Last Node Deleted
+        // list.deleteLast(); // Last Node Deleted
+
+        list.deleteThis(5); // Delete Any Index Node
+
         list.printLL();
 
 
@@ -36,6 +39,32 @@ class DeletePrintLL{
         }
 
         head = head.next;
+    }
+
+    public void deleteThis(int idx){
+        if(head==null){
+            System.out.println("List is Empty!");
+            return;
+        }
+
+        if(idx==1){
+            deleteFirst();
+            return;
+        }
+        
+        int count=1;
+        Node currNode = head.next;
+        Node prevNode = head;
+        while(currNode !=null){
+            count++;
+            if(count==idx){
+                prevNode.next = currNode.next;
+                return;
+            }
+            prevNode = prevNode.next;
+            currNode = currNode.next;
+        }
+        System.out.println("No Node Deleted - Index Out Of Bond! Enter Currect index.");
     }
 
     // ----------Delete Last---------------------
