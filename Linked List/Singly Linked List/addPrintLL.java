@@ -88,6 +88,7 @@ public class addPrintLL{
 
     // ------- Traverse and Print Node --------------
     public void printList(){
+        int count = 0;
         if(head==null){ // if list is Empty;
             System.out.println("List is Empty!");
             return;
@@ -97,7 +98,10 @@ public class addPrintLL{
         while(currNode != null){
             System.out.print(currNode.data + "-->");
             currNode = currNode.next;
+            count++;
         }
-        System.out.print("Null");
+        System.out.println("Null");
+
+        System.out.println("Length Of Linked List: " + count);
     }
 }
