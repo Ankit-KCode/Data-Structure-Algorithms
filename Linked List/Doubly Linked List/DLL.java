@@ -26,6 +26,7 @@ public class DLL{
     public static void main(String args[]){
         DLL list = new DLL();
 
+        // 30<->90<->80<->70<->60<->40<->50<->100<->null
         list.addLast(40);
         list.addLast(50);
         list.addFirst(60);
@@ -34,7 +35,12 @@ public class DLL{
         list.addFirst(90);
         list.addMid(100, 6);
         list.addMid(30, 0);
+        // list.deleteFirst();
+        // list.deleteLast();
+        // list.print();
+        list.deleteThis(8);
         list.print();
+        // list.print(head.data);
 
     }
 
@@ -123,5 +129,56 @@ public class DLL{
         }
         System.out.println("null");
 
+    }
+
+    // Deleting Node from DLL ------------------
+    public void deleteFirst(){
+        head = head.next;
+        head.prev = null;
+    }
+
+    public void deleteLast(){
+        Node currNode = head.next;
+        Node secondLast = head;
+
+        while(currNode.next != null){
+            currNode = currNode.next;
+            secondLast = secondLast.next;
+        }
+
+        secondLast.next = null;
+    }
+
+    public void deleteThis(int idx){
+        if(idx==0){ //Edge Case
+            deleteFirst();
+            return;
+        }
+
+        Node currNode = head;
+        // Node currPrev = head;
+        int count = 0;
+
+        while(currNode.next != null){
+            if(count == idx) break;
+            count++;
+            currNode = currNode.next;
+            // currPrev = currPrev.next;
+        }
+        if(currNode.next == null){ // Edge Case
+            deleteLast();
+            return;
+        }
+        if(idx > count){ // Edge Case
+            System.out.println("Index Out Of Bond! Wrong Index.");
+        }
+        
+        // Delete Any Node
+        currNode.prev.next = currNode.next;
+        currNode.next.prev = currNode.prev;
+
+        // currPrev.next = currNode.next;
+        // currNode.next.prev = currPrev;
+        
     }
 }
