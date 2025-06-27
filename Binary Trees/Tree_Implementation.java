@@ -16,7 +16,12 @@ public class Tree_Implementation{
         root.left.left = new Node(4);
         root.right.right = new Node(5);
 
+        System.out.print("Preorder Traversal: ");
         preorder(root);
+        System.out.println();
+        System.out.print("Inorder Traversal: ");
+        inorder(root);
+
     }
 
     // PreOrder Traversal-----------
@@ -26,5 +31,14 @@ public class Tree_Implementation{
         System.out.print(root.data + " ");
         preorder(root.left);
         preorder(root.right);
+    }
+
+    // Inorder Traversal -----------
+    static void inorder(Node root){
+        if(root==null) return;
+
+        inorder(root.left);
+        System.out.print(root.data + " ");
+        inorder(root.right);
     }
 }
