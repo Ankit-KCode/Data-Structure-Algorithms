@@ -15,7 +15,16 @@ public class Tree_Implementation{
         root.right = new Node(3);
         root.left.left = new Node(4);
         root.right.right = new Node(5);
+
+        preorder(root);
+    }
+
+    // PreOrder Traversal-----------
+    static void preorder(Node root){
+        if(root == null) return;
+
+        System.out.print(root.data + " ");
+        preorder(root.left);
+        preorder(root.right);
     }
 }
-
-// add Leetcode Traversal method
