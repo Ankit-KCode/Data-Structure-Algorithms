@@ -21,6 +21,9 @@ public class Tree_Implementation{
         System.out.println();
         System.out.print("Inorder Traversal: ");
         inorder(root);
+        System.out.println();
+        System.out.print("Postorder Traversal: ");
+        postorder(root);
 
     }
 
@@ -36,9 +39,18 @@ public class Tree_Implementation{
     // Inorder Traversal -----------
     static void inorder(Node root){
         if(root==null) return;
-
+        
         inorder(root.left);
         System.out.print(root.data + " ");
         inorder(root.right);
+    }
+    
+    // Postorder Traversal -----------
+    static void postorder(Node root){
+        if(root==null) return;
+
+        postorder(root.left);
+        postorder(root.right);
+        System.out.print(root.data + " ");
     }
 }
