@@ -1,3 +1,4 @@
+import java.util.*;
 public class ArrayDifference{
     public static void main(String[]args){
         int[] arr1 = {6, 3, 7, 5};
@@ -10,9 +11,10 @@ public class ArrayDifference{
         int k = result.length - 1;
 
         while(i>=0 && j>=0){
-            result[k] = arr1[i] - arr2[j];
+            result[k--] = arr1[i--] - arr2[j--];
 
-            
         }
+
+        System.out.println(Arrays.toString(result));
     }
 }
