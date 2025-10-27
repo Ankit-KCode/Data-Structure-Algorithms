@@ -2,6 +2,7 @@ import java.util.Arrays;
 public class QuickSort{
     public static void main(String args[]){
         int arr[] = {1, 3, 3, 1, 2, 4, 1, 2, 5, 6, 2, 4};
+        // int[] arr = {50, 60, 30, 10, 40, 20, 70, 80};
         int low = 0;
         int high = arr.length-1;
         QuickSort(arr, low, high);
@@ -22,9 +23,9 @@ public class QuickSort{
         int i = low+1;
         int j = high;
 
-        while(i<j){
-            while(arr[i] <= pivot && i <= high-1) i++;
-            while(arr[j] > pivot && j >= low+1) j--;
+        while(i<=j){
+            while(arr[i] <= pivot && i <= j) i++;
+            while(arr[j] > pivot && j >= i) j--;
             if(i<j) swap(arr, i, j);
         }
         swap(arr, low, j);
