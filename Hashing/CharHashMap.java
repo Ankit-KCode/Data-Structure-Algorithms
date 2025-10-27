@@ -12,5 +12,13 @@ public class CharHashMap{
 
         System.out.println(map);
         System.out.println(map.get('a'));
+
+        // Traversing through HashMap
+        // for(Map.Entry<Character, Integer> entry : map.entrySet()){
+        //     if(entry.getValue()==minFreq){
+        //         System.out.println(entry.getKey()+"="+minFreq);
+        //     }
+        // }
+        
     }
 }
